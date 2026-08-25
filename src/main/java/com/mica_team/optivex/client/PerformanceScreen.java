@@ -33,12 +33,12 @@ public class PerformanceScreen extends Screen {
                 20
         ).build();
 
-        this.addRenderableWidget(fastMathButton);
+        addRenderableWidget(fastMathButton);
 
-        this.addRenderableWidget(
+        addRenderableWidget(
                 Button.builder(
                         Component.literal("Done"),
-                        button -> this.minecraft.setScreen(parent)
+                        button -> onClose()
                 ).bounds(
                         centerX - 100,
                         this.height / 2 + 20,
@@ -70,23 +70,23 @@ public class PerformanceScreen extends Screen {
             int mouseY,
             float partialTick
     ) {
-        this.renderBackground(guiGraphics);
+        renderBackground(guiGraphics);
 
         guiGraphics.drawCenteredString(
-                this.font,
-                this.title,
-                this.width / 2,
+                font,
+                title,
+                width / 2,
                 40,
                 0xFFFFFF
         );
 
         guiGraphics.drawCenteredString(
-                this.font,
+                font,
                 Component.literal(
-                        "Optimizations provided by Optivex"
+                        "Optivex performance options"
                 ),
-                this.width / 2,
-                65,
+                width / 2,
+                60,
                 0xAAAAAA
         );
 
@@ -95,6 +95,6 @@ public class PerformanceScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parent);
+        minecraft.setScreen(parent);
     }
-                  }
+            }
