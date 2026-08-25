@@ -6,17 +6,15 @@ license="Apache-2.0"
 modId="optivex"
 version="${file.jarVersion}"
 displayName="Optivex"
-authors="Mica-team"
+authors="Mica_team"
 description='''
-Optivex is a lightweight Minecraft performance optimization mod
-designed to improve FPS, reduce unnecessary CPU usage, and optimize
-game performance without changing the vanilla gameplay experience.
+Optivex is a lightweight Minecraft performance optimization mod.
 '''
 
 [[dependencies.optivex]]
 modId="forge"
 mandatory=true
-versionRange="[47.0,)"
+versionRange="[47,)"
 ordering="NONE"
 side="BOTH"
 
