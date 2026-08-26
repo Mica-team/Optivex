@@ -4,7 +4,7 @@
   "package": "com.mica_team.optivex.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "OptionsScreenMixin"
+    "VideoSettingsScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
