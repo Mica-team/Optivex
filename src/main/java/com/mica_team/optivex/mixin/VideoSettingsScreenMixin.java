@@ -3,6 +3,7 @@ package com.mica_team.optivex.mixin;
 import com.mica_team.optivex.client.PerformanceScreen;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.VideoSettingsScreen;
+import net.minecraft.network.chat.Component;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -12,25 +13,25 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class VideoSettingsScreenMixin {
 
     @Inject(method = "init", at = @At("TAIL"))
-private void optivex$addPerformanceButton(CallbackInfo ci) {
-    VideoSettingsScreen screen = (VideoSettingsScreen) (Object) this;
+    private void optivex$addPerformanceButton(CallbackInfo ci) {
+        VideoSettingsScreen screen = (VideoSettingsScreen) (Object) this;
 
-    System.out.println("[Optivex] Adding Performance button");
+        System.out.println("[Optivex] Adding Performance button");
 
-    screen.addRenderableWidget(
-        Button.builder(
-            Component.literal("Performance"),
-            button -> screen.getMinecraft().setScreen(
-                new PerformanceScreen(screen)
+        screen.addRenderableWidget(
+            Button.builder(
+                Component.literal("Performance"),
+                button -> screen.getMinecraft().setScreen(
+                    new PerformanceScreen(screen)
+                )
             )
-        )
-        .bounds(
-            screen.width / 2 - 100,
-            screen.height - 70,
-            200,
-            20
-        )
-        .build()
-    );
+            .bounds(
+                screen.width / 2 - 100,
+                screen.height - 70,
+                200,
+                20
+            )
+            .build()
+        );
+    }
 }
-            }
