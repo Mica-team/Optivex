@@ -12,25 +12,25 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class VideoSettingsScreenMixin {
 
     @Inject(method = "init", at = @At("TAIL"))
-    private void optivex$addPerformanceButton(CallbackInfo ci) {
-        VideoSettingsScreen screen = (VideoSettingsScreen) (Object) this;
+private void optivex$addPerformanceButton(CallbackInfo ci) {
+    VideoSettingsScreen screen = (VideoSettingsScreen) (Object) this;
 
-        System.out.println("[Optivex] Adding Performance button");
+    System.out.println("[Optivex] Adding Performance button");
 
-        this.addRenderableWidget(
-            Button.builder(
-                net.minecraft.network.chat.Component.literal("Performance"),
-                button -> screen.getMinecraft().setScreen(
-                    new PerformanceScreen(screen)
-                )
+    screen.addRenderableWidget(
+        Button.builder(
+            Component.literal("Performance"),
+            button -> screen.getMinecraft().setScreen(
+                new PerformanceScreen(screen)
             )
-            .bounds(
-                screen.width / 2 - 100,
-                screen.height - 70,
-                200,
-                20
-            )
-            .build()
-        );
-    }
+        )
+        .bounds(
+            screen.width / 2 - 100,
+            screen.height - 70,
+            200,
+            20
+        )
+        .build()
+    );
+}
             }
